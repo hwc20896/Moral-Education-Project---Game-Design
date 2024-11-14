@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>rsc/firstpagebg.jpg</file>
+        <file>rsc/qnabg.jpg</file>
+        <file>rsc/outrobg.jpg</file>
+    </qresource>
+    <qresource prefix="/sound">
+        <file>rsc/bingo.wav</file>
+        <file>rsc/ohno.wav</file>
+        <file>rsc/OMFG_Pizza.mp3</file>
+        <file>rsc/pop.wav</file>
+    </qresource>
+    <qresource prefix="/rank">
+        <file>rsc/ARank.png</file>
+        <file>rsc/BRank.png</file>
+        <file>rsc/CRank.png</file>
+        <file>rsc/SRank.png</file>
+    </qresource>
+    <qresource prefix="/mutestate">
+        <file>rsc/mute.jpg</file>
+        <file>rsc/unmute.jpg</file>
+    </qresource>
+</RCC>
