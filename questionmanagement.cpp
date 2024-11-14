@@ -1,11 +1,14 @@
 #include "questionmanagement.h"
 #include <stdexcept>
 #include "outrowidget.h"
-#include <QDebug>
 #include <algorithm>
 using namespace std::chrono;
 using QTQB = QuestionTemplate::QuestionBase;
+
+#ifdef DEBUG
+#include <QDebug>
 #define cout qDebug()
+#endif
 
 QuestionManagement::QuestionManagement(const std::deque<QuestionTemplate::QuestionBase*>& Questions, int Quantity, QWidget* parent) :
   QStackedWidget(parent), Quantity(Quantity){
@@ -106,7 +109,10 @@ void QuestionManagement::EndGame(){
 
     int64_t totaltime = 0;
     std::for_each(TimeStamps.begin(), TimeStamps.end(), [&](int time){totaltime += time;});
-    cout << QString("Time used: %1ms.").arg(totaltime);
+
+    #ifdef DEBUG
+        cout << QString("Time used: %1ms.").arg(totaltime);
+    #endif
 
     this->close();
     OutroWidget* outro = new OutroWidget(CorrCount, IncorrCount, totaltime);

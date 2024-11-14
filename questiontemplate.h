@@ -13,6 +13,7 @@
 #include <QSoundEffect>
 #include <QAudioOutput>
 #define BUTTON_CLICK &QPushButton::clicked
+#define DEBUG
 
 namespace Question{
     struct MultipleChoice;
