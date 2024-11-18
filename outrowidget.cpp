@@ -35,13 +35,13 @@ ResultWidget::ResultWidget(int CorrCount, int IncorrCount, int64_t TotalTime, QW
 
     TimeUsed = new QLabel(QString("完成時間：%1").arg(TimeDisplay(TotalTime)),this);
     TimeUsed->ALIGNCENTER;
-    TimeUsed->setGeometry(120,450,280,40);
+    TimeUsed->setGeometry(120,450,300,40);
     TimeUsed->hide();
     TimeUsed->setFont(QFont(DEFAULTFONT,25));
 
     AvgTime = new QLabel(QString("平均回答時間：%1").arg(TimeDisplay(TotalTime/QuestionCount)),this);
     AvgTime->ALIGNCENTER;
-    AvgTime->setGeometry(570,450,390,40);
+    AvgTime->setGeometry(570,450,400,40);
     AvgTime->hide();
     AvgTime->setFont(QFont(DEFAULTFONT,25));
 
@@ -76,7 +76,7 @@ void ResultWidget::PageSetup(){
 QString ResultWidget::TimeDisplay(double dur){
     if (dur > 6e4){
         double remain = remainder(dur,60.0);
-        return QString("%1分%2秒").arg(floor(dur/60.0)).arg(QString::number(remain<0?remain+60:remain,'g',3));
+        return QString("%1分%2秒").arg(floor(dur/6e4)).arg(QString::number(remain<0?remain+60:remain,'g',3));
     }
     else if (dur == 6e4) return "1分鐘";
     else if (dur >= 0) return QString("%1秒").arg(QString::number(dur/1000.0,'g',3));
