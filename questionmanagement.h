@@ -30,7 +30,7 @@ class QuestionManagement : public QStackedWidget{
         time_point<high_resolution_clock> Start, End;
         std::vector<int64_t> TimeStamps;
         bool IsMuted;
-        static constexpr float PlayVolume = 0.5;
+        static constexpr float PlayVolume = 0.25;
 };
 
 #endif
