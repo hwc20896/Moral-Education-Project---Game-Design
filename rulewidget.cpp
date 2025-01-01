@@ -9,7 +9,7 @@
 #endif
 
 RuleWidget::RuleWidget(QWidget* parent) : QWidget(parent){
-    QLabel* RuleTitle = new QLabel("游戲規則",this);
+    QLabel* RuleTitle = new QLabel("遊戲規則",this);
     RuleTitle->setGeometry(420,35,160,40);
     RuleTitle->setAlignment(Qt::AlignCenter);
     RuleTitle->setFont(QFont(FONT,28));
@@ -23,7 +23,7 @@ RuleWidget::RuleWidget(QWidget* parent) : QWidget(parent){
     ReturnButton->setFont(QFont(FONT,16));
 
     #if SOUNDINRULE  // Debugger Version
-        RuleText->setText("（游戲以程序檔(.exe)呈現）\n\n玩法：\n在按開始游戲後，玩家共需回答八條問題。\n答對了（選擇正確答案）可直接進入下一題，並獲得「甜美」的恭喜音效。\n答錯（選擇錯誤答案）則自動出現正確答案，並獲得「甜美」的「鼓勵」音效。\n答題庫共有22條，每輪游戲會隨機抽出8題進行游戲。"
+        RuleText->setText("（遊戲以程序檔(.exe)呈現）\n\n玩法：\n在按開始遊戲後，玩家共需回答八條問題。\n答對了（選擇正確答案）可直接進入下一題，並獲得「甜美」的恭喜音效。\n答錯（選擇錯誤答案）則自動出現正確答案，並獲得「甜美」的「鼓勵」音效。\n答題庫共有22條，每輪遊戲會隨機抽出8題進行遊戲。"
                           "\n\n等級劃分：（正確率）\n80% ~ 100% -> S\n55% ~ 80% -> A\n30% ~ 55% -> B\n0% ~ 30% -> C");
         RuleText->setGeometry(35,110,700,475);
 
@@ -50,7 +50,7 @@ RuleWidget::RuleWidget(QWidget* parent) : QWidget(parent){
         BooSound->setFont(QFont(FONT,12));
         connect(BooSound,BUTTON_CLICK,this,[=]{IncorrSoundPreview->play();});
     #else   // Public Version
-        RuleText->setText("在按開始游戲後，玩家共需回答八條問題。\n選擇正確答案可直接進入下一題，並獲得甜美的恭喜音效。\n選擇錯誤答案則自動出現正確答案，並獲得甜美的鼓勵音效。\n答題庫共有22條，每輪游戲會隨機抽出8題進行游戲。");
+        RuleText->setText("在按開始遊戲後，玩家共需回答八條問題。\n選擇正確答案可直接進入下一題，並獲得甜美的恭喜音效。\n選擇錯誤答案則自動出現正確答案，並獲得甜美的鼓勵音效。\n答題庫共有22條，每輪遊戲會隨機抽出8題進行遊戲。");
         RuleText->setGeometry(75,110,850,475);
     #endif
 }
